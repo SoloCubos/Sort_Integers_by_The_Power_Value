@@ -55,7 +55,8 @@ public class Solution {
         }
         System.out.println("-----------------------");
         System.out.println("Printing array by the power ordered value with the integer");
-        int[] arrRanOrdenado = bubbleSortModified(arrPwr, arrLo2Hi);
+        
+        int[] arrRanOrdenado = bubbleSortModified(arrPwr, arrLo2Hi);//Here calls the bubblesort method, which is modified.
         
         System.out.println("-----------------------");
         System.out.println("Printing array by the power ordered value");
@@ -63,17 +64,27 @@ public class Solution {
             System.out.println(arrRanOrdenado[i]);
             
         }
-        Kth = arrRanOrdenado[k];
+        Kth = arrRanOrdenado[k - 1];
+        
         System.out.println("-----------------------");
         System.out.println("Printing Kth Position in the array");
         return Kth;     
     }
 
+    /**
+     * This is a normal bubbleSort method, but modified receive 2 arrays, sort the firstone by ascending orden, and the secondone acorrding to the another array.
+     * @param arrPwr this param receives the array that contains the power value of the integers
+     * @param arrLo2Hi this param receives the array than contains the integer
+     * @return and retuns an array with the integers ordered by power value
+     */
     public int[] bubbleSortModified(int[] arrPwr, int[] arrLo2Hi) {
        
         for(int i = 0; i < arrPwr.length; i++) {
+            
             for (int j = 0; j < arrPwr.length - 1; j++) {
+                
                 if (arrPwr[j] > arrPwr[j + 1]) {
+                    
                     int temp = arrPwr[j];
                     int aux = arrLo2Hi[j];
                     arrPwr[j] = arrPwr[j + 1];
@@ -82,7 +93,8 @@ public class Solution {
                     arrLo2Hi[j + 1] = aux;
                 }
             }
-        }for (int i = 0; i < arrPwr.length; i++) {
+        }
+        for (int i = 0; i < arrPwr.length; i++) {
             System.out.println(arrPwr[i] + ", " + arrLo2Hi[i]);
             
         }
