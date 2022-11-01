@@ -19,14 +19,15 @@ public class Solution {
         int Kth = 0;
         int[] arr = new int[(hi - lo) + 1];
         int[] arrPwr = new int[(hi - lo) + 1];
+        int[] arrLo2Hi = new int[(hi - lo) + 1];
         int aux = lo;
         int contador = 0;
         
         for (int i = 0; i < arr.length; i++) {
             arr[i] = aux;
+            arrLo2Hi[i] = aux;
             aux++;
         }
-
         for (int i = 0; i < arr.length; i++) {
             while(arr[i] != 1){
                 if(arr[i] % 2 == 0){
@@ -36,14 +37,35 @@ public class Solution {
                     arr[i] = 3 * arr[i] + 1;
                     contador++;
                 }
-            }
-            arrPwr[i] = contador;
+            }arrPwr[i] = contador;
             contador = 0;
         }
-        
+   
         for (int i = 0; i < arrPwr.length; i++) {
-            System.out.println(arrPwr[i]);
-        }
+            System.out.println(arrPwr[i] + ", " + arrLo2Hi[i]);
+            
+        }System.out.println("-----------------------");
+        bubbleSortModified(arrPwr, arrLo2Hi);
         return Kth;     
+    }
+
+    public int[] bubbleSortModified(int[] arrPwr, int[] arrLo2Hi) {
+       
+        for(int i = 0; i < arrPwr.length; i++) {
+            for (int j = 0; j < arrPwr.length - 1; j++) {
+                if (arrPwr[j] > arrPwr[j + 1]) {
+                    int temp = arrPwr[j];
+                    int aux = arrLo2Hi[j];
+                    arrPwr[j] = arrPwr[j + 1];
+                    arrLo2Hi[j] = arrLo2Hi[j + 1];
+                    arrPwr[j + 1] = temp;
+                    arrLo2Hi[j + 1] = aux;
+                }
+            }
+        }for (int i = 0; i < arrPwr.length; i++) {
+            System.out.println(arrPwr[i] + ", " + arrLo2Hi[i]);
+            
+        }
+        return arrPwr;
     }
 }
