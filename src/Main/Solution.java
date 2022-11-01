@@ -12,23 +12,31 @@ package Main;
 public class Solution {
     public static void main(String [] args){
         Solution s = new Solution();
-        s.getKth(7, 11, 2);
+        System.out.println(s.getKth(10, 15, 3));
     }
     
+    /**
+     *
+     * @param lo receives the lower value for the interval [lo - hi]
+     * @param hi receives the highest value for the interval [lo - hi]
+     * @param k is needed for asking the k position of the array ordered power value of integer array in the range [lo, hi]
+     * @return the position Kth in the array
+     */
     public int getKth(int lo, int hi, int k) {
         int Kth = 0;
-        int[] arr = new int[(hi - lo) + 1];
-        int[] arrPwr = new int[(hi - lo) + 1];
-        int[] arrLo2Hi = new int[(hi - lo) + 1];
+        int range = (hi - lo) + 1;
+        int[] arr = new int[range];
+        int[] arrPwr = new int[range];
+        int[] arrLo2Hi = new int[range];
         int aux = lo;
         int contador = 0;
         
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < arr.length; i++) {//here, program generates all the numbers in the range [lo, hi], and add it to two arrays
             arr[i] = aux;
             arrLo2Hi[i] = aux;
             aux++;
         }
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < arr.length; i++) {//this algoritm calculates the power value of the number in the range [lo, hi]
             while(arr[i] != 1){
                 if(arr[i] % 2 == 0){
                     arr[i] = arr[i] / 2;
@@ -40,12 +48,24 @@ public class Solution {
             }arrPwr[i] = contador;
             contador = 0;
         }
-   
+        System.out.println("Printing array ordered in the range [Lo, Hi]");
         for (int i = 0; i < arrPwr.length; i++) {
             System.out.println(arrPwr[i] + ", " + arrLo2Hi[i]);
             
-        }System.out.println("-----------------------");
-        bubbleSortModified(arrPwr, arrLo2Hi);
+        }
+        System.out.println("-----------------------");
+        System.out.println("Printing array by the power ordered value with the integer");
+        int[] arrRanOrdenado = bubbleSortModified(arrPwr, arrLo2Hi);
+        
+        System.out.println("-----------------------");
+        System.out.println("Printing array by the power ordered value");
+        for (int i = 0; i < arrRanOrdenado.length; i++) {
+            System.out.println(arrRanOrdenado[i]);
+            
+        }
+        Kth = arrRanOrdenado[k];
+        System.out.println("-----------------------");
+        System.out.println("Printing Kth Position in the array");
         return Kth;     
     }
 
@@ -66,6 +86,6 @@ public class Solution {
             System.out.println(arrPwr[i] + ", " + arrLo2Hi[i]);
             
         }
-        return arrPwr;
+        return arrLo2Hi;
     }
 }
