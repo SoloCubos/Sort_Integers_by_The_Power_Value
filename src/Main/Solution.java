@@ -37,7 +37,7 @@ public class Solution {
         int Kth = 0;
         int range = (hi - lo) + 1;//Se calcula el intervalo [lo, hi]
         
-        System.out.println("El Intervalo es: " + range);
+        System.out.println("El Intervalo [lo, hi] es: " + range);
         
         int[] arr = new int[range];
         int[] arrStep = new int[range];
