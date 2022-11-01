@@ -8,13 +8,10 @@ package Main;
 /**
  *
  * @author Solan
+ * @version 1.2
+ * 
  */
-public class Solution {
-    public static void main(String [] args){
-        Solution s = new Solution();
-        System.out.println(s.getKth(10, 15, 3));
-    }
-    
+public class Solution {  
     /**
      *
      * @param lo receives the lower value for the interval [lo - hi]
@@ -25,6 +22,7 @@ public class Solution {
     public int getKth(int lo, int hi, int k) {
         int Kth = 0;
         int range = (hi - lo) + 1;
+        System.out.println("Range is: " + range);
         int[] arr = new int[range];
         int[] arrPwr = new int[range];
         int[] arrLo2Hi = new int[range];
@@ -48,26 +46,11 @@ public class Solution {
             }arrPwr[i] = contador;
             contador = 0;
         }
-        System.out.println("Printing array ordered in the range [Lo, Hi]");
-        for (int i = 0; i < arrPwr.length; i++) {
-            System.out.println(arrPwr[i] + ", " + arrLo2Hi[i]);
-            
-        }
-        System.out.println("-----------------------");
-        System.out.println("Printing array by the power ordered value with the integer");
         
         int[] arrRanOrdenado = bubbleSortModified(arrPwr, arrLo2Hi);//Here calls the bubblesort method, which is modified.
         
-        System.out.println("-----------------------");
-        System.out.println("Printing array by the power ordered value");
-        for (int i = 0; i < arrRanOrdenado.length; i++) {
-            System.out.println(arrRanOrdenado[i]);
-            
-        }
         Kth = arrRanOrdenado[k - 1];
-        
-        System.out.println("-----------------------");
-        System.out.println("Printing Kth Position in the array");
+
         return Kth;     
     }
 
@@ -93,11 +76,6 @@ public class Solution {
                     arrLo2Hi[j + 1] = aux;
                 }
             }
-        }
-        for (int i = 0; i < arrPwr.length; i++) {
-            System.out.println(arrPwr[i] + ", " + arrLo2Hi[i]);
-            
-        }
-        return arrLo2Hi;
+        }return arrLo2Hi;
     }
 }
