@@ -3,7 +3,7 @@
 
 AYDA2022-2 - 1151977 -  Juan F. Solano A.
 
-## Table of contents
+## Tabla de contenidos
 * [Introduccion](#introducción)
 * [Desarrollo](#desarrollo)
 * [Uso](#uso)
