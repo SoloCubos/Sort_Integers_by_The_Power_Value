@@ -11,7 +11,7 @@ AYDA2022-2 - 1151977 -  Juan F. Solano A.
 * [Ejecución](#ejecución)
 ## Introduccion
 
-Vídeo Demostrativo: 
+Vídeo Demostrativo: https://youtu.be/fnm-QQHpC9M
 
 La potencia de un entero x se define como el número de pasos necesarios para transformar x en 1 usando los siguientes pasos:
 
