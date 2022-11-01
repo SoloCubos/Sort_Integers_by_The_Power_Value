@@ -18,7 +18,7 @@ La potencia de un entero x se define como el número de pasos necesarios para tr
 * si x es par entonces x = x / 2
 * si x es impar entonces x = 3 * x + 1
 
-Por ejemplo, la potencia de x = 3 es 7 porque 3 necesita 7 pasos para convertirse en 1
+    Por ejemplo, la potencia de x = 3 es 7 porque 3 necesita 7 pasos para convertirse en 1
 
     (3 --> 10 --> 5 --> 16 --> 8 --> 4 --> 2 --> 1) .
 
@@ -28,15 +28,16 @@ Devuelve el k-gesimo entero en el intervalo [lo, hi] ordenado por el valor de su
 
     Ejemplo:
 
-Entrada: lo = 12, hola = 15, k = 2
+    Entrada: lo = 12, hola = 15, k = 2
 
-Salida: 13
+    Salida: 13
 
-Explicación: El poder de 12 es 9 
+    Explicación: 
 
-El poder de 13 es 9
-El poder de 14 es 17
-El poder de 15 es 17
+    El poder de 12 es 9 
+    El poder de 13 es 9
+    El poder de 14 es 17
+    El poder de 15 es 17
 
 El intervalo ya está ordenado por el valor de su poder [12,13,14,15]. Para k = 2 la respuesta es el segundo elemento que es 13.
 
