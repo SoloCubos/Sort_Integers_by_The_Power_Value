@@ -1,4 +1,7 @@
+
 ### Sort Integers by The Power Value (Ordenamiento de numeros enteros por valor de su poder)
+
+AYDA2022-2 - 1151977 -  Juan F. Solano A.
 
 ## Table of contents
 * [Introduccion](#introducción)
@@ -91,4 +94,6 @@ El método recibe 3 arreglos con todos los casos de prueba generados, y por medi
 ## Ejecución
 
 Para ejecutar este proyecto se requiere de tener Java Instalado en la maquina, se puede ejecutar tanto por ventana de comandos con los comandos correspondientes, como con un IDE de desarrollo
+
+
 
